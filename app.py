@@ -16,8 +16,8 @@ st.set_page_config(
 # ---------------------------------------------------------
 @st.cache_data(ttl=60)
 def cargar_datos():
-    url_respuestas = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNUAuiTD8wmxJ1XKj6Pxf6aI-ZYh_40Ok4GDKg5NvBVVgr43LrDrg4TSqVnm2WXhD4JEb3HNMq3uk9/pub?gid=63689495&single=true&output=csv"
-    url_responsables = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNUAuiTD8wmxJ1XKj6Pxf6aI-ZYh_40Ok4GDKg5NvBVVgr43LrDrg4TSqVnm2WXhD4JEb3HNMq3uk9/pub?gid=1304424228&single=true&output=csv"
+    url_respuestas = st.secrets["google_sheets"]["url_respuestas"]
+    url_responsables = st.secrets["google_sheets"]["url_responsables"]
 
     df_respuestas = pd.read_csv(url_respuestas)
     df_responsables = pd.read_csv(url_responsables)
